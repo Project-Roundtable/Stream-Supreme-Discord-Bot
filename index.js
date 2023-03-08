@@ -1,10 +1,21 @@
-// Require the necessary discord.js classes
+/**
+ * Require the necessary discord.js classes.
+ */
 const { Client, Events, GatewayIntentBits } = require("discord.js");
 
+/**
+ * Init and load .env into process.env for config management.
+ */
 require("dotenv").config();
 
-// Create a new client instance
+/**
+ * The authentication token for the bot.
+ */
 const BOT_TOKEN = process.env.BOT_TOKEN; 
+
+/**
+ * Create a new Discord client instance
+ */
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 // When the client is ready, run this code (only once)
