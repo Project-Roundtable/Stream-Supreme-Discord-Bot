@@ -1,0 +1,33 @@
+{
+  "name": "stream-supreme-discord-bot",
+  "version": "1.0.0",
+  "description": "A media recommendation Discord bot that helps you find your next binge-worthy obsession!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Project-Roundtable/Stream-Supreme-Discord-Bot.git"
+  },
+  "keywords": [
+    "discord",
+    "music",
+    "media",
+    "bot",
+    "movies",
+    "tv"
+  ],
+  "author": "Luke Skinner, Andrew McGuckin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Project-Roundtable/Stream-Supreme-Discord-Bot/issues"
+  },
+  "homepage": "https://github.com/Project-Roundtable/Stream-Supreme-Discord-Bot#readme",
+  "dependencies": {
+    "discord.js": "^14.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.35.0"
+  }
+}
