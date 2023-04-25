@@ -4,6 +4,7 @@
   "description": "A media recommendation Discord bot that helps you find your next binge-worthy obsession!",
   "main": "index.js",
   "scripts": {
+    "start":"node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
