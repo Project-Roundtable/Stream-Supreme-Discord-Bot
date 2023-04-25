@@ -1,12 +1,40 @@
+/**
+ * Require REST api and routes for registering slash commands.
+ */
 const { REST, Routes } = require("discord.js");
 
-const { clientId, guildId, token } = require("./config.json");
+/**
+ * Init and load .env into process.env for config management.
+ */
+require("dotenv").config();
 
+/**
+ * The authentication token for the bot.
+ */
+const BOT_TOKEN = process.env.BOT_TOKEN; 
+
+/**
+ * The client ID for the bot. (Application ID) 
+ */
+const CLIENT_ID = process.env.CLIENT_ID;
+
+/**
+ * The Guild ID for the test server. (Server ID)
+ */
+const GUILD_ID = process.env.GUILD_ID;
+
+/**
+ * Require file system module from node for command file parsing.
+ */
 const fs = require("node:fs");
 
+/**
+ * Require path module from node for constructing paths.
+ */
 const path = require("node:path");
 
 const commands = [];
+
 // Grab all the command files from the commands directory you created earlier
 const foldersPath = path.join(__dirname, "commands");
 
@@ -31,7 +59,7 @@ for (const folder of commandFolders) {
 }
 
 // Construct and prepare an instance of the REST module
-const rest = new REST().setToken(token);
+const rest = new REST().setToken(BOT_TOKEN);
 
 // and deploy your commands!
 (async () => {
@@ -41,7 +69,7 @@ const rest = new REST().setToken(token);
         // The put method is used to fully refresh all commands in the guild with the current set
         const data = await rest.put(
             // NOTE: When we want to deploy these globally, we want to change this route to aapplicationsCommands()
-            Routes.applicationGuildCommands(clientId, guildId),
+            Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
             { body: commands },
         );
 
